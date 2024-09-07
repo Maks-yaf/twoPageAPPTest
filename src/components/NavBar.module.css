@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #e4e4e4;
+}
+
+.navbar h3 {
+    font-size: 16px;
+    font-weight: 520;
+    padding-left: 100px;
+}
+
+.button {
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 450;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #d0d0d0;
+}
+
+@media (max-width: 600px) {
+    .navbar h3 {
+        padding-left: 50px;
+    }
+}
