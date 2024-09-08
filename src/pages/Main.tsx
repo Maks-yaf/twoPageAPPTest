@@ -1,19 +1,18 @@
 import React, {useEffect} from 'react';
-import {postSlice} from "../store/main-reducer";
-import {useAppDispatch, useAppSelector} from "../hooks/redux";
+import {useAppDispatch} from "../hooks/redux";
 import {fetchPosts} from "../store/AsyncActionCreator";
 import PostContainer from "../components/PostContainer";
 import style from "./Main.module.css"
 
 const Main = () => {
 
-    // const {posts, isLoading, error} = useAppSelector(state => state.postReducer)
-    // const {} = postSlice.actions
     const dispatch = useAppDispatch()
 
     useEffect( ()=> {
         dispatch(fetchPosts())
     },[])
+
+    ////Удалить потом
 
     return (
         <div className={style.main}>
