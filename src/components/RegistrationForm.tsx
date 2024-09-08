@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from "./RegistrationForm.module.css"
-import {AppDispatch, RootState} from "../store/store";
-import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch} from "../store/store";
+import {useDispatch} from "react-redux";
 import {setUserAction} from "../store/user-reducer";
 import {useNavigate} from "react-router-dom";
+import {toast, ToastContainer} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const RegistrationForm = () => {
 
@@ -18,36 +20,36 @@ const RegistrationForm = () => {
             const data = await response.json();
             if (data.length > 0) {
                 dispatch(setUserAction(data[0]));
-                alert(`Welcome, ${data[0].username}!`);
+                toast.success(`Welcome, ${data[0].username}!`);
                 navigate('/main');
             } else {
-                alert('User not found.');
+                toast.error(`User "${username}" not found.`);
             }
         } catch (error) {
-            alert('Error fetching user data.');
-            console.error('Error fetching user:', error);
+            toast.error('Error fetching user data.');
         }
     };
 
-    return (
-                <div className={style.container}>
-                    <h2>Sign In</h2>
-                     <div className={style.login_form}>
-                    <input
-                        className={style.input}
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Username"
-                    />
-                    <button
-                        className={style.submit_button}
-                        onClick={handleSubmit}
-                    >Submit
-                    </button>
-                     </div>
-                </div>
 
+    return (
+        <div className={style.container}>
+            <div className={style.toastContainer }><ToastContainer /></div>
+            <h2>Sign In</h2>
+            <div className={style.login_form}>
+                <input
+                    className={style.input}
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Username"
+                />
+                <button
+                    className={style.submit_button}
+                    onClick={handleSubmit}
+                >Submit
+                </button>
+            </div>
+        </div>
     );
 };
 

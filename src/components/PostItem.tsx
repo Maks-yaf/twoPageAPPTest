@@ -6,8 +6,7 @@ interface PostItemProps {
     post: IPost;
 }
 
-
-const PostItem: FC<PostItemProps>= ({post}) => {
+const PostItem: FC<PostItemProps> = ({post}) => {
     return (
         <div className={style.card}>
             <div className={style.image_placeholder}></div>
