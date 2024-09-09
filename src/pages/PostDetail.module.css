@@ -12,7 +12,6 @@
     box-shadow: 4px 4px 10px teal;
 }
 
-
 .postTitle {
     font-size: 20px;
     margin-bottom: 15px;
@@ -46,18 +45,18 @@
 }
 
 .commentAuthor {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .commentBody {
-    font-size: 12px;
+    font-size: 14px;
     color: #111;
 }
 
 .commentEmail {
-    font-size: 12px;
+    font-size: 14px;
     color: #555;
     margin-top: 5px;
 }
@@ -69,4 +68,10 @@
     transform: translate(-50%, -50%);
     color: teal;
     font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .postDetail {
+        margin: 130px auto 10px;
+    }
 }
