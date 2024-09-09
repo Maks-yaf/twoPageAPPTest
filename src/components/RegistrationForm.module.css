@@ -5,6 +5,8 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 450px;
+    margin: 120px auto;
+
 }
 
 .container h2 {
@@ -42,4 +44,27 @@
 
 .submit_button:hover {
     background-color: #004d40;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+        margin: 140px auto;
+    }
+
+    .container h2 {
+        margin-bottom: 60px;
+        font-size: 20px;
+    }
+
+    .input {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .submit_button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
 }

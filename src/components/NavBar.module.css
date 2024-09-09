@@ -1,11 +1,15 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: white;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     padding: 15px;
-
 }
 
 .navbar:hover {
@@ -64,6 +68,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 10px;
+        height: 120px;
     }
 
     .label {

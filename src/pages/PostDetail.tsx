@@ -36,7 +36,7 @@ const PostDetail = () => {
         }
     }, [fetchedComments]);
 
-    if (postLoading || commentLoading) return <h1>Loading...</h1>;
+    if (postLoading || commentLoading) return <h1 className={style.loading}>Loading...</h1>;
 
     return (
         <div className={style.postDetail}>
