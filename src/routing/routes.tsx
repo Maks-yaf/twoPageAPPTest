@@ -1,6 +1,6 @@
-import Main from "./pages/Main";
-import {AUTH_ROUTE, MAIN_ROUTE} from "./utils/consts";
-import Auth from "./pages/Auth";
+import Main from "../pages/Main";
+import {AUTH_ROUTE, MAIN_ROUTE} from "../utils/consts";
+import Auth from "../pages/Auth";
 
 export const publicRoutes = [
     {

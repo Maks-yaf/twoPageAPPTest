@@ -1,7 +1,7 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Main from "../pages/Main";
-import {publicRoutes} from "../routes";
+import {publicRoutes} from "./routes";
 
 const AppRouter = () => {
     return (

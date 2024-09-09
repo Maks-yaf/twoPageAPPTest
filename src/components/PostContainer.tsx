@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
-import {postAPI} from "../services/PostService";
+import {postAPI} from "../api/PostService";
 import PostItem from "./PostItem";
-import {IPost} from "../models/IPost";
+import {IPost} from "../types/IPost";
 import style from "./PostContainer.module.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

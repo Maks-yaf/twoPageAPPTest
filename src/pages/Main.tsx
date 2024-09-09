@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PostContainer from "../components/PostContainer";
 import style from "./Main.module.css"
 

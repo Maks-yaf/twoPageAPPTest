@@ -1,17 +1,17 @@
 import React from 'react';
 import style from './NavBar.module.css'
 import {useNavigate} from "react-router-dom";
-import {AUTH_ROUTE, MAIN_ROUTE} from "../utils/consts";
 import {AppDispatch, RootState} from "../store/store";
-import {useDispatch, useSelector} from "react-redux";
 import {logOutAction} from "../store/user-reducer";
 import "react-toastify/dist/ReactToastify.css";
+import {useAppDispatch, useAppSelector} from "../hooks/redux";
+import {AUTH_ROUTE, MAIN_ROUTE} from "../utils/consts";
 
 const NavBar = () => {
 
-    const dispatch: AppDispatch = useDispatch();
-    const isAuth = useSelector((state: RootState) => state.userReducer.isAuth);
-    const user = useSelector((state: RootState) => state.userReducer.user);
+    const dispatch: AppDispatch = useAppDispatch();
+    const isAuth = useAppSelector((state: RootState) => state.userReducer.isAuth);
+    const user = useAppSelector((state: RootState) => state.userReducer.user);
     const navigate = useNavigate()
 
     const handleLogOut = () => {

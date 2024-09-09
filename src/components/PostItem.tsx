@@ -1,10 +1,6 @@
 import React, {FC} from 'react';
-import {IPost} from "../models/IPost";
 import style from "./PostItem.module.css";
-
-interface PostItemProps {
-    post: IPost;
-}
+import {PostItemProps} from "../types/IPostItemProps";
 
 const PostItem: FC<PostItemProps> = ({post}) => {
     return (

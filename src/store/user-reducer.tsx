@@ -1,22 +1,17 @@
-import {IUser} from "../models/IUser";
+import {IUser} from "../types/IUser";
+
+const SET_USER = "SET_USER"
+const LOG_OUT = "LOG_OUT"
 
 interface UserState {
     user: IUser | null,
     isAuth: boolean,
-    isLoading: boolean,
-    error: string,
 }
 
 const initialState: UserState = {
     user: null,
     isAuth: false,
-    isLoading: false,
-    error: '',
 }
-
-const SET_USER = "SET_USER"
-const LOG_OUT = "LOG_OUT"
-
 
 const userReducer = (state = initialState, action: any): UserState => {
     switch (action.type) {
@@ -38,7 +33,7 @@ const userReducer = (state = initialState, action: any): UserState => {
     }
 };
 
-export const setUserAction = (payload:any) => ({type:SET_USER, payload})
+export const setUserAction = (payload:IUser | null) => ({type:SET_USER, payload})
 export const logOutAction = () => ({type:LOG_OUT})
 
 export default userReducer;
