@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const PostContainer = () => {
+
     const {data: posts, error, isLoading} = postAPI.useFetchAllPostsQuery(8)
 
     useEffect(() => {

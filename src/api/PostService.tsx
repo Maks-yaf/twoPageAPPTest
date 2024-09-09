@@ -6,7 +6,7 @@ export const postAPI = createApi ({
     baseQuery: fetchBaseQuery({baseUrl: 'https://jsonplaceholder.typicode.com'}),
     endpoints: (build) => ({
         fetchAllPosts: build.query<IPost[], number>({
-            query: (limit:number) => ({
+            query: (limit: number) => ({
                 url: "/posts",
                 params: {
                     _limit: limit,

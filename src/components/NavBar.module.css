@@ -1,49 +1,86 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    justify-content: space-between;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #e4e4e4;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+
+}
+
+.navbar:hover {
+    box-shadow: 4px 4px 10px teal;
 }
 
 .label {
-    font-size: 16px;
-    font-weight: 520;
-    padding-left: 100px;
-    text-decoration: none;
-    color: black;
+    font-size: 20px;
+    color: teal;
     cursor: pointer;
 }
 
 .label:hover {
-    color: teal;
+    color: black;
 }
 
 .welcome_message {
     font-size: 18px;
-    font-weight: 600;
+    color: #333;
+    margin-right: 20px;
 }
 
 .button {
-    padding: 5px 10px;
-    background-color: #e0e0e0;
+    background-color: teal;
+    color: white;
     border: none;
     border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
+    font-size: 14px;
     transition: background-color 0.3s ease;
-    font-weight: 450;
-    font-size: 16px;
 }
 
 .button:hover {
-    background-color: teal;
+    background-color: #004d40;
 }
 
-@media (max-width: 600px) {
-    .navbar h3 {
-        padding-left: 50px;
+.button:focus {
+    outline: none;
+}
+
+.user_info {
+    font-size: 14px;
+    color: #555;
+    margin-right: 20px;
+}
+
+.navbar div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .label {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .welcome_message {
+        font-size: 16px;
+    }
+
+    .user_info {
+        font-size: 12px;
+    }
+
+    .button {
+        padding: 8px 12px;
+        font-size: 12px;
     }
 }
-

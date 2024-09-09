@@ -1,21 +1,19 @@
 import React from 'react';
-import style from './NavBar.module.css'
-import {useNavigate} from "react-router-dom";
-import {AppDispatch, RootState} from "../store/store";
-import {logOutAction} from "../store/user-reducer";
-import "react-toastify/dist/ReactToastify.css";
-import {useAppDispatch, useAppSelector} from "../hooks/redux";
-import {AUTH_ROUTE, MAIN_ROUTE} from "../utils/consts";
+import style from './NavBar.module.css';
+import { useNavigate } from "react-router-dom";
+import { AppDispatch } from "../store/store";
+import { logOutAction } from "../store/user-reducer";
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
+import { AUTH_ROUTE, MAIN_ROUTE } from "../utils/consts";
 
 const NavBar = () => {
-
     const dispatch: AppDispatch = useAppDispatch();
-    const isAuth = useAppSelector((state: RootState) => state.userReducer.isAuth);
-    const user = useAppSelector((state: RootState) => state.userReducer.user);
-    const navigate = useNavigate()
+    const isAuth = useAppSelector((state) => state.userReducer.isAuth);
+    const user = useAppSelector((state) => state.userReducer.user);
+    const navigate = useNavigate();
 
     const handleLogOut = () => {
-        dispatch(logOutAction())
+        dispatch(logOutAction());
         navigate(AUTH_ROUTE);
     };
 
@@ -29,27 +27,24 @@ const NavBar = () => {
 
     return (
         <div className={style.navbar}>
+            <h3 className={style.label} onClick={handleNavigateMain}>
+                Best Application
+            </h3>
             {isAuth && user ? (
                 <>
-                    <h3 className={style.label} onClick={handleNavigateMain}>
-                        Best Application
-                    </h3>
-                    <h2 className={style.welcome_message}>Welcome, {user.username}</h2>
-                    <div>name: {user.name}</div>
-                    <div>email: {user.email}</div>
+                    <div>
+                        <h2 className={style.welcome_message}>Welcome, {user.username}</h2>
+                        <div className={style.user_info}>name: {user.name}</div>
+                        <div className={style.user_info}>email: {user.email}</div>
+                    </div>
                     <button className={style.button} onClick={handleLogOut}>
                         Log Out
                     </button>
                 </>
             ) : (
-                <>
-                    <h3 className={style.label} onClick={handleNavigateMain}>
-                        Best Application
-                    </h3>
-                    <button className={style.button} onClick={handleNavigateAuth}>
-                        Sign In
-                    </button>
-                </>
+                <button className={style.button} onClick={handleNavigateAuth}>
+                    Sign In
+                </button>
             )}
         </div>
     );

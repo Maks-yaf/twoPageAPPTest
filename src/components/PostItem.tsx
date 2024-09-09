@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
 import style from "./PostItem.module.css";
 import {PostItemProps} from "../types/IPostItemProps";
+import {Link} from "react-router-dom";
 
 const PostItem: FC<PostItemProps> = ({post}) => {
     return (
-        <div className={style.card}>
+        <Link to={`/post/${post.id}`} className={style.card}>
             <div className={style.image_placeholder}></div>
             <div className={style.card_title}>
                 {post.title}
@@ -12,7 +13,7 @@ const PostItem: FC<PostItemProps> = ({post}) => {
             <div className={style.card_body}>
                 {post.body}
             </div>
-        </div>
+        </Link>
     );
 };
 
