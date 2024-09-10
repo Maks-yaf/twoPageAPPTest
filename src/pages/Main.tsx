@@ -1,6 +1,6 @@
 import React from 'react';
 import PostContainer from "../components/PostContainer";
-import style from "./Main.module.css"
+import style from "../moduleCss/moodulePages/Main.module.css"
 
 const Main = () => {
     return (

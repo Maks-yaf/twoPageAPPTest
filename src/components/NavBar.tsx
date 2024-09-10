@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './NavBar.module.css';
+import style from '../moduleCss/moduleComponents/NavBar.module.css';
 import { useNavigate } from "react-router-dom";
 import { AppDispatch } from "../store/store";
 import { logOutAction } from "../store/user-reducer";

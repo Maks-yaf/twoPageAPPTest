@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./RegistrationForm.module.css"
+import style from "../moduleCss/moduleComponents/RegistrationForm.module.css"
 import {ToastContainer} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import {useRegistrationForm} from "../hooks/useRegistrationForm";

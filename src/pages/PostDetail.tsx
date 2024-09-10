@@ -5,7 +5,7 @@ import {IComment} from "../types/IComment";
 import {postAPI} from "../api/PostService";
 import {commentAPI} from "../api/CommentService";
 import {toast, ToastContainer} from "react-toastify";
-import style from './PostDetail.module.css';
+import style from '../moduleCss/moodulePages/PostDetail.module.css';
 
 const PostDetail = () => {
     const { id } = useParams<{ id: string }>();
@@ -36,28 +36,29 @@ const PostDetail = () => {
         }
     }, [fetchedComments]);
 
-    if (postLoading || commentLoading) return <h1 className={style.loading}>Loading...</h1>;
-
     return (
-        <div className={style.postDetail}>
-            <ToastContainer />
-            {post && (
-                <>
-                    <h1 className={style.postTitle}>{post.title}</h1>
-                    <p className={style.postBody}>{post.body}</p>
-                    <h2 className={style.commentsTitle}>Comments:</h2>
-                    <ul>
-                        {comments.map(comment => (
-                            <li key={comment.id} className={style.commentCard}>
-                                <p className={style.commentAuthor}>{comment.name}</p>
-                                <p className={style.commentBody}>{comment.body}</p>
-                                <p className={style.commentEmail}>{comment.email}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </>
-            )}
-        </div>
+        <>
+            {(postLoading || commentLoading) && <h1 className={style.loading}>Loading...</h1>}
+            <div className={style.postDetail}>
+                <ToastContainer/>
+                {post && (
+                    <>
+                        <h1 className={style.postTitle}>{post.title}</h1>
+                        <p className={style.postBody}>{post.body}</p>
+                        <h2 className={style.commentsTitle}>Comments:</h2>
+                        <ul>
+                            {comments.map(comment => (
+                                <li key={comment.id} className={style.commentCard}>
+                                    <p className={style.commentAuthor}>{comment.name}</p>
+                                    <p className={style.commentBody}>{comment.body}</p>
+                                    <p className={style.commentEmail}>{comment.email}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+            </div>
+        </>
     );
 };
 

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import style from "./PostItem.module.css";
+import style from "../moduleCss/moduleComponents/PostItem.module.css";
 import {PostItemProps} from "../types/IPostItemProps";
 import {Link} from "react-router-dom";
 

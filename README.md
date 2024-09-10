@@ -4,3 +4,4 @@
 
 3.Write "npm start" - to open application in browser on localhost ([http://localhost:3000])
 
+4.For SigIn you can use the username Bret or Kamren
