@@ -8,11 +8,19 @@ import {toast, ToastContainer} from "react-toastify";
 import style from '../moduleCss/moodulePages/PostDetail.module.css';
 
 const PostDetail = () => {
-    const { id } = useParams<{ id: string }>();
+    const {id} = useParams<{ id: string }>();
     const [post, setPost] = useState<IPost | null>(null);
     const [comments, setComments] = useState<IComment[]>([]);
-    const { data: fetchedPost, error: postError, isLoading: postLoading } = postAPI.useFetchAllPostsQuery(Number(id));
-    const { data: fetchedComments, error: commentError, isLoading: commentLoading } = commentAPI.useFetchCommentsByPostQuery(Number(id));
+    const {
+        data: fetchedPost,
+        error: postError,
+        isLoading: postLoading
+    } = postAPI.useFetchAllPostsQuery(Number(id));
+    const {
+        data: fetchedComments,
+        error: commentError,
+        isLoading: commentLoading
+    } = commentAPI.useFetchCommentsByPostQuery(Number(id));
 
     useEffect(() => {
         if (postError) {

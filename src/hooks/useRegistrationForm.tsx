@@ -19,7 +19,7 @@ export const useRegistrationForm = () => {
             if (data.length > 0) {
                 const user = data[0];
                 dispatch(setUserAction(user));
-                setTimeout( () => toast.success(`Welcome, ${user.username}!`), 100);
+                setTimeout(() => toast.success(`Welcome, ${user.username}!`), 100);
                 navigate('/main');
             } else {
                 toast.error(`User "${username}" not found.`);

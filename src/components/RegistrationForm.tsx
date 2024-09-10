@@ -6,11 +6,11 @@ import {useRegistrationForm} from "../hooks/useRegistrationForm";
 
 const RegistrationForm = () => {
 
-    const { username, setUsername, handleSubmit } = useRegistrationForm()
+    const {username, setUsername, handleSubmit} = useRegistrationForm()
 
     return (
         <div className={style.container}>
-            <div className={style.toastContainer }><ToastContainer /></div>
+            <div className={style.toastContainer}><ToastContainer/></div>
             <h2>Sign In</h2>
             <div className={style.login_form}>
                 <input

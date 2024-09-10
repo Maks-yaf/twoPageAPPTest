@@ -1,7 +1,7 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 import {IPost} from "../types/IPost";
 
-export const postAPI = createApi ({
+export const postAPI = createApi({
     reducerPath: 'postAPI',
     baseQuery: fetchBaseQuery({baseUrl: 'https://jsonplaceholder.typicode.com'}),
     endpoints: (build) => ({

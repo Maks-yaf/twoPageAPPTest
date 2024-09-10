@@ -3,13 +3,17 @@ import {postAPI} from "../api/PostService";
 import PostItem from "./PostItem";
 import {IPost} from "../types/IPost";
 import style from "../moduleCss/moduleComponents/PostContainer.module.css";
-import { toast, ToastContainer } from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const PostContainer = () => {
 
     const [limit, setLimit] = useState<number>(8)
-    const {data: posts, error, isLoading} = postAPI.useFetchAllPostsQuery(limit)
+    const {
+        data: posts,
+        error,
+        isLoading
+    } = postAPI.useFetchAllPostsQuery(limit)
 
     useEffect(() => {
         if (error) {
