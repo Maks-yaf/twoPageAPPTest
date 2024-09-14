@@ -41,7 +41,7 @@ const PostContainer = () => {
                 </select>
             </div>
             <div className={style.card_grid}>
-                {isLoading && <h1 className={style.loading}>Loading....</h1>}
+                {isLoading && <h1 className={style.loading}>Loading posts....</h1>}
                 {posts && posts.map((post: IPost) =>
                     <PostItem post={post} key={post.id}/>
                 )}
